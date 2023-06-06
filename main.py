@@ -9,11 +9,16 @@ with col1:
 
 with col2:
     st.title("Lolita Iliadi")
-    content = """
+    content1 = """
     Hello there! I'm a Lola, 23 years old, I am deeply passionate 
     about learning Python. I've embarked on a thrilling journey to master 
     this programming language, and I've created this portfolio 
     website as a platform to showcase my coding skills and projects.
     
     """
-    st.info(content)
+    st.info(content1)
+
+content2 = '''
+Below you can find some of the apps I have built in Python. Feel free to contact me!
+'''
+st.write(content2)
