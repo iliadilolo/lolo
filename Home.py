@@ -26,21 +26,26 @@ Feel free to contact me!
 
 st.subheader(content2)
 
-col3, empty_col, col4 = st.columns([1.5, 0.5, 1.5])
+col3, col4, col5 = st.columns([1, 1, 1], gap='medium')
 
 df = pandas.read_csv('data.csv', sep=';')
 with col3:
-    for index, row in df[:10].iterrows():
+    for index, row in df[:6].iterrows():
         st.header(row['title'])
         st.write(row['description'])
-        st.image('images/' + row['image'])
+        st.image('images/' + row['image'], width=200)
         st.write(f'[Source Code]({row["url"]})')
-        # st.write(f'[Use App]({row["app_url"]})')
 
 with col4:
-    for index, row in df[10:].iterrows():
+    for index, row in df[6:12].iterrows():
         st.header(row['title'])
         st.write(row['description'])
-        st.image('images/' + row['image'])
+        st.image('images/' + row['image'], width=200)
         st.write(f'[Source Code]({row["url"]})')
-        # st.write(f'[Use App]({row["app_url"]})')
+
+with col5:
+    for index, row in df[12:].iterrows():
+        st.header(row['title'])
+        st.write(row['description'])
+        st.image('images/' + row['image'], width=200)
+        st.write(f'[Source Code]({row["url"]})')
